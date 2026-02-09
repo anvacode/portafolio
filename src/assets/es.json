@@ -1,0 +1,40 @@
+{
+  "HEADER": {
+    "HOME": "Inicio",
+    "ABOUT": "Sobre mí",
+    "PROJECTS": "Proyectos",
+    "CONTACT": "Contacto"
+  },
+  "HERO": {
+    "GREETING": "Hola, soy",
+    "TITLE": "Desarrollador Full Stack",
+    "SUBTITLE": "Creo experiencias digitales elegantes y funcionales",
+    "CTA": "Ver proyectos"
+  },
+  "ABOUT": {
+    "TITLE": "Sobre mí",
+    "DESCRIPTION": "Soy un desarrollador apasionado por crear soluciones innovadoras. Me especializo en construir aplicaciones web modernas con tecnologías de vanguardia.",
+    "TECHNOLOGIES": "Tecnologías"
+  },
+  "PROJECTS": {
+    "TITLE": "Proyectos",
+    "VIEW_PROJECT": "Ver proyecto",
+    "VIEW_CODE": "Ver código",
+    "LOADING": "Cargando proyectos..."
+  },
+  "CONTACT": {
+    "TITLE": "Contacto",
+    "SUBTITLE": "¿Tienes un proyecto en mente? ¡Hablemos!",
+    "NAME": "Nombre",
+    "EMAIL": "Email",
+    "MESSAGE": "Mensaje",
+    "SEND": "Enviar mensaje",
+    "SENDING": "Enviando...",
+    "SUCCESS": "¡Mensaje enviado con éxito!",
+    "ERROR": "Hubo un error al enviar el mensaje. Intenta de nuevo."
+  },
+  "FOOTER": {
+    "MADE_WITH": "Hecho con",
+    "BY": "por"
+  }
+}
