@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-interface TechItem {
-  name: string;
-  icon: string;
-  color: string;
-}
-
 @Component({
   selector: 'app-tech-carousel',
   standalone: true,
@@ -14,18 +8,285 @@ interface TechItem {
   template: `
     <div class="tech-carousel-container">
       <div class="carousel-track">
-        <div class="tech-item" *ngFor="let tech of technologies">
-          <div class="tech-icon" [style.--tech-color]="tech.color">
-            <svg viewBox="0 0 24 24" fill="currentColor" [innerHTML]="tech.icon"></svg>
+        <!-- PHP -->
+        <div class="tech-item">
+          <div class="tech-icon" style="--tech-color: #777BB4">
+            <svg viewBox="0 0 128 128">
+              <path fill="currentColor" d="M64 33.74c-25.76 0-46.63 8.65-46.63 19.33 0 10.68 20.87 19.33 46.63 19.33 25.76 0 46.63-8.65 46.63-19.33 0-10.68-20.87-19.33-46.63-19.33zm0 34.66c-26.11 0-47.3-8.77-47.3-19.59s21.19-19.59 47.3-19.59 47.3 8.77 47.3 19.59-21.19 19.59-47.3 19.59z"/>
+            </svg>
           </div>
-          <span class="tech-name">{{ tech.name }}</span>
+          <span class="tech-name">PHP</span>
         </div>
-        <!-- Duplicado para efecto infinito -->
-        <div class="tech-item" *ngFor="let tech of technologies">
-          <div class="tech-icon" [style.--tech-color]="tech.color">
-            <svg viewBox="0 0 24 24" fill="currentColor" [innerHTML]="tech.icon"></svg>
+        <!-- Laravel -->
+        <div class="tech-item">
+          <div class="tech-icon" style="--tech-color: #FF2D20">
+            <svg viewBox="0 0 128 128">
+              <path fill="currentColor" d="M64.002 2.575c-33.82 0-61.268 27.453-61.268 61.31 0 33.857 27.448 61.31 61.268 61.31s61.268-27.453 61.268-61.31c0-33.857-27.449-61.31-61.268-61.31zM32.768 74.16l16.032-38.4 16.032 38.4H32.768zm48.064 0H64.8l16.032-38.4 16.032 38.4z"/>
+            </svg>
           </div>
-          <span class="tech-name">{{ tech.name }}</span>
+          <span class="tech-name">Laravel</span>
+        </div>
+        <!-- Vue.js -->
+        <div class="tech-item">
+          <div class="tech-icon" style="--tech-color: #4FC08D">
+            <svg viewBox="0 0 128 128">
+              <path fill="currentColor" d="M9.8 19.5h23.4l32.8 56.5 32.8-56.5h23.4L65.9 102 9.8 19.5zM65.9 39.8L55.2 21.2h21.5L65.9 39.8z"/>
+            </svg>
+          </div>
+          <span class="tech-name">Vue.js</span>
+        </div>
+        <!-- Angular -->
+        <div class="tech-item">
+          <div class="tech-icon" style="--tech-color: #DD0031">
+            <svg viewBox="0 0 128 128">
+              <path fill="currentColor" d="M64 15.36L16.8 35.7l7.2 60.7L64 117.12l40-20.72 7.2-60.7L64 15.36zm0 21.8l23.8 52.7H81.4l-6.1-15H52.7l-6.1 15H40.2L64 37.16z"/>
+            </svg>
+          </div>
+          <span class="tech-name">Angular</span>
+        </div>
+        <!-- TypeScript -->
+        <div class="tech-item">
+          <div class="tech-icon" style="--tech-color: #3178C6">
+            <svg viewBox="0 0 128 128">
+              <path fill="currentColor" d="M2 64V2h124v124H2V64zm100.3 40.1v-7.6H87v-6.7h6.7V66.4H87V59h21.7v7.6h-11v13.7h11v7.6h-11v16.3h15.6v7.6h-11.3zM58.4 104.1V59h7.6v16.5h15V59h7.6v45.1H81v-20h-15v20h-7.6z"/>
+            </svg>
+          </div>
+          <span class="tech-name">TypeScript</span>
+        </div>
+        <!-- Python -->
+        <div class="tech-item">
+          <div class="tech-icon" style="--tech-color: #3776AB">
+            <svg viewBox="0 0 128 128">
+              <path fill="currentColor" d="M63.9 15.5c-27.6 0-25.8 12-25.8 12v12h26.4v4H26.4s-17.7 2-17.7 25.5 16.6 25.5 16.6 25.5h10v-12s-.6-15.6 15.6-15.6h26.4s15.1.2 15.1-14.6V30.1s2.3-14.6-27.9-14.6zM52.3 23.6c2.6 0 4.7 2.1 4.7 4.7s-2.1 4.7-4.7 4.7-4.7-2.1-4.7-4.7 2.1-4.7 4.7-4.7z"/>
+            </svg>
+          </div>
+          <span class="tech-name">Python</span>
+        </div>
+        <!-- Linux -->
+        <div class="tech-item">
+          <div class="tech-icon" style="--tech-color: #FCC624">
+            <svg viewBox="0 0 128 128">
+              <path fill="currentColor" d="M64 4C31.76 4 6 29.76 6 62s25.76 58 58 58 58-25.76 58-58S96.24 4 64 4zm0 104c-25.4 0-46-20.6-46-46S38.6 16 64 16s46 20.6 46 46-20.6 46-46 46z"/>
+            </svg>
+          </div>
+          <span class="tech-name">Linux</span>
+        </div>
+        <!-- AWS -->
+        <div class="tech-item">
+          <div class="tech-icon" style="--tech-color: #FF9900">
+            <svg viewBox="0 0 128 128">
+              <path fill="currentColor" d="M38.4 59.6c0 3.4 1.2 6.2 3.3 8.2 2.2 2 5.2 3 9.1 3 1.6 0 3.2-.2 4.9-.6v-6.6c-1.3.3-2.5.5-3.7.5-2 0-3.1-.8-3.1-2.5V48h7v-7h-7v-10l-7.5 1.5v8.5h-4.7v7h4.7v11.1zM66.2 70.8c2.9 0 5.3-.5 7.3-1.4v-6.6c-1.7.7-3.5 1.1-5.4 1.1-2.1 0-3.2-.9-3.2-2.6V48h8.6v-7h-8.6v-10l-7.5 1.5v8.5h-4.7v7h4.7v14.4c0 2.6.9 4.6 2.7 6 1.8 1.4 4.2 2.1 7.1 2.1z"/>
+            </svg>
+          </div>
+          <span class="tech-name">AWS</span>
+        </div>
+        <!-- MySQL -->
+        <div class="tech-item">
+          <div class="tech-icon" style="--tech-color: #4479A1">
+            <svg viewBox="0 0 128 128">
+              <path fill="currentColor" d="M116.9 96.3c-1.5-.2-2.6.1-3.6.6-.2.1-.4.2-.6.2-.3 0-.6-.1-.6-.5 0-.4.2-.7.4-1 .6-.8 1.6-1.2 2.7-1.3 1.1-.1 2.2.2 3.1.8.5.3.9.8 1.2 1.3.4.6.6 1.3.7 2 .1.8 0 1.6-.3 2.3-.4.9-1 1.6-1.8 2.2-.9.6-2 1-3.1 1.1-1.2.1-2.3-.1-3.3-.7-1-.6-1.7-1.5-2.1-2.5-.4-1.1-.5-2.3-.3-3.4.3-1.5 1-2.9 2.1-3.9 1.1-1 2.6-1.5 4.1-1.4 1.2.1 2.3.5 3.2 1.2.7.6 1.2 1.3 1.5 2.1.2.6.3 1.2.2 1.8-.1.7-.4 1.3-.8 1.8-.5.6-1.2 1-2 1.2-.9.2-1.8.1-2.6-.3-.7-.3-1.2-.9-1.5-1.6-.2-.5-.3-1.1-.2-1.6.1-.6.4-1.1.8-1.5.5-.5 1.1-.7 1.8-.8.6-.1 1.2 0 1.7.3.4.2.7.6.9 1 .2.5.2 1 0 1.5-.1.4-.4.7-.8.9-.4.2-.8.2-1.2.1-.3-.1-.6-.3-.7-.6-.1-.2-.1-.5 0-.7.1-.2.3-.4.5-.5z"/>
+            </svg>
+          </div>
+          <span class="tech-name">MySQL</span>
+        </div>
+        <!-- PostgreSQL -->
+        <div class="tech-item">
+          <div class="tech-icon" style="--tech-color: #336791">
+            <svg viewBox="0 0 128 128">
+              <path fill="currentColor" d="M93.6 70.9c-5.8-1.5-10.6-1.6-13.6-.3-1.8.7-3.1 2-3.8 3.8-.7 1.8-.6 4 .3 6.6.8 2.4 2 4.6 3.6 6.5 1.8 2.2 3.9 4 6.2 5.3 2.6 1.5 5.5 2.3 8.4 2.3 3.2 0 6.2-.9 8.9-2.7 2.5-1.7 4.4-4.1 5.5-7 1-2.6 1.1-5.5.3-8.2-.9-3.1-2.8-5.8-5.3-7.6-2.8-2.1-6.3-2.8-10.5-2.7z"/>
+            </svg>
+          </div>
+          <span class="tech-name">PostgreSQL</span>
+        </div>
+        <!-- MongoDB -->
+        <div class="tech-item">
+          <div class="tech-icon" style="--tech-color: #47A248">
+            <svg viewBox="0 0 128 128">
+              <path fill="currentColor" d="M64 4c-4 16-6 32-6 48s2 32 6 48c4-16 6-32 6-48s-2-32-6-48z"/>
+            </svg>
+          </div>
+          <span class="tech-name">MongoDB</span>
+        </div>
+        <!-- Git -->
+        <div class="tech-item">
+          <div class="tech-icon" style="--tech-color: #F05032">
+            <svg viewBox="0 0 128 128">
+              <path fill="currentColor" d="M124.7 58.4L69.6 3.3c-3.2-3.2-8.3-3.2-11.5 0L46.1 15.3l14.5 14.5c3.4-1.1 7.3-.4 10 2.3 2.7 2.7 3.4 6.6 2.3 10l14 14c3.4-1.1 7.3-.4 10 2.3 3.8 3.8 3.8 9.9 0 13.7-3.8 3.8-9.9 3.8-13.7 0-2.8-2.8-3.5-7-2.1-10.4l-13.1-13.1v34.4c.9.5 1.8 1.1 2.5 1.9 3.8 3.8 3.8 9.9 0 13.7-3.8 3.8-9.9 3.8-13.7 0-3.8-3.8-3.8-9.9 0-13.7.7-.7 1.5-1.3 2.4-1.7V44.5c-.9-.5-1.7-1.1-2.4-1.9-2.9-2.9-3.6-7.1-2.1-10.6L41 18.7 3.3 56.4c-3.2 3.2-3.2 8.3 0 11.5l55.1 55.1c3.2 3.2 8.3 3.2 11.5 0l54.8-54.8c3.2-3.2 3.2-8.3 0-11.5z"/>
+            </svg>
+          </div>
+          <span class="tech-name">Git</span>
+        </div>
+        <!-- Bash -->
+        <div class="tech-item">
+          <div class="tech-icon" style="--tech-color: #4EAA25">
+            <svg viewBox="0 0 128 128">
+              <rect x="10" y="20" width="108" height="88" rx="8" fill="none" stroke="currentColor" stroke-width="6"/>
+              <line x1="30" y1="45" x2="70" y2="45" stroke="currentColor" stroke-width="5"/>
+              <line x1="30" y1="64" x2="98" y2="64" stroke="currentColor" stroke-width="5"/>
+              <line x1="30" y1="83" x2="80" y2="83" stroke="currentColor" stroke-width="5"/>
+            </svg>
+          </div>
+          <span class="tech-name">Bash</span>
+        </div>
+        <!-- CCNA -->
+        <div class="tech-item">
+          <div class="tech-icon" style="--tech-color: #1BA0D7">
+            <svg viewBox="0 0 128 128">
+              <path fill="currentColor" d="M64 4L4 34v60l60 30 60-30V34L64 4zm0 20l40 20-40 20-40-20 40-20zM14 46l46 23v46l-46-23V46zm100 0v46l-46 23V69l46-23z"/>
+            </svg>
+          </div>
+          <span class="tech-name">CCNA</span>
+        </div>
+        <!-- Scrum -->
+        <div class="tech-item">
+          <div class="tech-icon" style="--tech-color: #6DB33F">
+            <svg viewBox="0 0 128 128">
+              <circle cx="64" cy="64" r="56" fill="none" stroke="currentColor" stroke-width="8"/>
+              <path fill="currentColor" d="M92 44L56 80 36 60l-8 8 28 28 44-44z"/>
+            </svg>
+          </div>
+          <span class="tech-name">Scrum</span>
+        </div>
+
+        <!-- Duplicados para efecto infinito -->
+        <!-- PHP -->
+        <div class="tech-item">
+          <div class="tech-icon" style="--tech-color: #777BB4">
+            <svg viewBox="0 0 128 128">
+              <path fill="currentColor" d="M64 33.74c-25.76 0-46.63 8.65-46.63 19.33 0 10.68 20.87 19.33 46.63 19.33 25.76 0 46.63-8.65 46.63-19.33 0-10.68-20.87-19.33-46.63-19.33zm0 34.66c-26.11 0-47.3-8.77-47.3-19.59s21.19-19.59 47.3-19.59 47.3 8.77 47.3 19.59-21.19 19.59-47.3 19.59z"/>
+            </svg>
+          </div>
+          <span class="tech-name">PHP</span>
+        </div>
+        <!-- Laravel -->
+        <div class="tech-item">
+          <div class="tech-icon" style="--tech-color: #FF2D20">
+            <svg viewBox="0 0 128 128">
+              <path fill="currentColor" d="M64.002 2.575c-33.82 0-61.268 27.453-61.268 61.31 0 33.857 27.448 61.31 61.268 61.31s61.268-27.453 61.268-61.31c0-33.857-27.449-61.31-61.268-61.31zM32.768 74.16l16.032-38.4 16.032 38.4H32.768zm48.064 0H64.8l16.032-38.4 16.032 38.4z"/>
+            </svg>
+          </div>
+          <span class="tech-name">Laravel</span>
+        </div>
+        <!-- Vue.js -->
+        <div class="tech-item">
+          <div class="tech-icon" style="--tech-color: #4FC08D">
+            <svg viewBox="0 0 128 128">
+              <path fill="currentColor" d="M9.8 19.5h23.4l32.8 56.5 32.8-56.5h23.4L65.9 102 9.8 19.5zM65.9 39.8L55.2 21.2h21.5L65.9 39.8z"/>
+            </svg>
+          </div>
+          <span class="tech-name">Vue.js</span>
+        </div>
+        <!-- Angular -->
+        <div class="tech-item">
+          <div class="tech-icon" style="--tech-color: #DD0031">
+            <svg viewBox="0 0 128 128">
+              <path fill="currentColor" d="M64 15.36L16.8 35.7l7.2 60.7L64 117.12l40-20.72 7.2-60.7L64 15.36zm0 21.8l23.8 52.7H81.4l-6.1-15H52.7l-6.1 15H40.2L64 37.16z"/>
+            </svg>
+          </div>
+          <span class="tech-name">Angular</span>
+        </div>
+        <!-- TypeScript -->
+        <div class="tech-item">
+          <div class="tech-icon" style="--tech-color: #3178C6">
+            <svg viewBox="0 0 128 128">
+              <path fill="currentColor" d="M2 64V2h124v124H2V64zm100.3 40.1v-7.6H87v-6.7h6.7V66.4H87V59h21.7v7.6h-11v13.7h11v7.6h-11v16.3h15.6v7.6h-11.3zM58.4 104.1V59h7.6v16.5h15V59h7.6v45.1H81v-20h-15v20h-7.6z"/>
+            </svg>
+          </div>
+          <span class="tech-name">TypeScript</span>
+        </div>
+        <!-- Python -->
+        <div class="tech-item">
+          <div class="tech-icon" style="--tech-color: #3776AB">
+            <svg viewBox="0 0 128 128">
+              <path fill="currentColor" d="M63.9 15.5c-27.6 0-25.8 12-25.8 12v12h26.4v4H26.4s-17.7 2-17.7 25.5 16.6 25.5 16.6 25.5h10v-12s-.6-15.6 15.6-15.6h26.4s15.1.2 15.1-14.6V30.1s2.3-14.6-27.9-14.6zM52.3 23.6c2.6 0 4.7 2.1 4.7 4.7s-2.1 4.7-4.7 4.7-4.7-2.1-4.7-4.7 2.1-4.7 4.7-4.7z"/>
+            </svg>
+          </div>
+          <span class="tech-name">Python</span>
+        </div>
+        <!-- Linux -->
+        <div class="tech-item">
+          <div class="tech-icon" style="--tech-color: #FCC624">
+            <svg viewBox="0 0 128 128">
+              <path fill="currentColor" d="M64 4C31.76 4 6 29.76 6 62s25.76 58 58 58 58-25.76 58-58S96.24 4 64 4zm0 104c-25.4 0-46-20.6-46-46S38.6 16 64 16s46 20.6 46 46-20.6 46-46 46z"/>
+            </svg>
+          </div>
+          <span class="tech-name">Linux</span>
+        </div>
+        <!-- AWS -->
+        <div class="tech-item">
+          <div class="tech-icon" style="--tech-color: #FF9900">
+            <svg viewBox="0 0 128 128">
+              <path fill="currentColor" d="M38.4 59.6c0 3.4 1.2 6.2 3.3 8.2 2.2 2 5.2 3 9.1 3 1.6 0 3.2-.2 4.9-.6v-6.6c-1.3.3-2.5.5-3.7.5-2 0-3.1-.8-3.1-2.5V48h7v-7h-7v-10l-7.5 1.5v8.5h-4.7v7h4.7v11.1zM66.2 70.8c2.9 0 5.3-.5 7.3-1.4v-6.6c-1.7.7-3.5 1.1-5.4 1.1-2.1 0-3.2-.9-3.2-2.6V48h8.6v-7h-8.6v-10l-7.5 1.5v8.5h-4.7v7h4.7v14.4c0 2.6.9 4.6 2.7 6 1.8 1.4 4.2 2.1 7.1 2.1z"/>
+            </svg>
+          </div>
+          <span class="tech-name">AWS</span>
+        </div>
+        <!-- MySQL -->
+        <div class="tech-item">
+          <div class="tech-icon" style="--tech-color: #4479A1">
+            <svg viewBox="0 0 128 128">
+              <path fill="currentColor" d="M116.9 96.3c-1.5-.2-2.6.1-3.6.6-.2.1-.4.2-.6.2-.3 0-.6-.1-.6-.5 0-.4.2-.7.4-1 .6-.8 1.6-1.2 2.7-1.3 1.1-.1 2.2.2 3.1.8.5.3.9.8 1.2 1.3.4.6.6 1.3.7 2 .1.8 0 1.6-.3 2.3-.4.9-1 1.6-1.8 2.2-.9.6-2 1-3.1 1.1-1.2.1-2.3-.1-3.3-.7-1-.6-1.7-1.5-2.1-2.5-.4-1.1-.5-2.3-.3-3.4.3-1.5 1-2.9 2.1-3.9 1.1-1 2.6-1.5 4.1-1.4 1.2.1 2.3.5 3.2 1.2.7.6 1.2 1.3 1.5 2.1.2.6.3 1.2.2 1.8-.1.7-.4 1.3-.8 1.8-.5.6-1.2 1-2 1.2-.9.2-1.8.1-2.6-.3-.7-.3-1.2-.9-1.5-1.6-.2-.5-.3-1.1-.2-1.6.1-.6.4-1.1.8-1.5.5-.5 1.1-.7 1.8-.8.6-.1 1.2 0 1.7.3.4.2.7.6.9 1 .2.5.2 1 0 1.5-.1.4-.4.7-.8.9-.4.2-.8.2-1.2.1-.3-.1-.6-.3-.7-.6-.1-.2-.1-.5 0-.7.1-.2.3-.4.5-.5z"/>
+            </svg>
+          </div>
+          <span class="tech-name">MySQL</span>
+        </div>
+        <!-- PostgreSQL -->
+        <div class="tech-item">
+          <div class="tech-icon" style="--tech-color: #336791">
+            <svg viewBox="0 0 128 128">
+              <path fill="currentColor" d="M93.6 70.9c-5.8-1.5-10.6-1.6-13.6-.3-1.8.7-3.1 2-3.8 3.8-.7 1.8-.6 4 .3 6.6.8 2.4 2 4.6 3.6 6.5 1.8 2.2 3.9 4 6.2 5.3 2.6 1.5 5.5 2.3 8.4 2.3 3.2 0 6.2-.9 8.9-2.7 2.5-1.7 4.4-4.1 5.5-7 1-2.6 1.1-5.5.3-8.2-.9-3.1-2.8-5.8-5.3-7.6-2.8-2.1-6.3-2.8-10.5-2.7z"/>
+            </svg>
+          </div>
+          <span class="tech-name">PostgreSQL</span>
+        </div>
+        <!-- MongoDB -->
+        <div class="tech-item">
+          <div class="tech-icon" style="--tech-color: #47A248">
+            <svg viewBox="0 0 128 128">
+              <path fill="currentColor" d="M64 4c-4 16-6 32-6 48s2 32 6 48c4-16 6-32 6-48s-2-32-6-48z"/>
+            </svg>
+          </div>
+          <span class="tech-name">MongoDB</span>
+        </div>
+        <!-- Git -->
+        <div class="tech-item">
+          <div class="tech-icon" style="--tech-color: #F05032">
+            <svg viewBox="0 0 128 128">
+              <path fill="currentColor" d="M124.7 58.4L69.6 3.3c-3.2-3.2-8.3-3.2-11.5 0L46.1 15.3l14.5 14.5c3.4-1.1 7.3-.4 10 2.3 2.7 2.7 3.4 6.6 2.3 10l14 14c3.4-1.1 7.3-.4 10 2.3 3.8 3.8 3.8 9.9 0 13.7-3.8 3.8-9.9 3.8-13.7 0-2.8-2.8-3.5-7-2.1-10.4l-13.1-13.1v34.4c.9.5 1.8 1.1 2.5 1.9 3.8 3.8 3.8 9.9 0 13.7-3.8 3.8-9.9 3.8-13.7 0-3.8-3.8-3.8-9.9 0-13.7.7-.7 1.5-1.3 2.4-1.7V44.5c-.9-.5-1.7-1.1-2.4-1.9-2.9-2.9-3.6-7.1-2.1-10.6L41 18.7 3.3 56.4c-3.2 3.2-3.2 8.3 0 11.5l55.1 55.1c3.2 3.2 8.3 3.2 11.5 0l54.8-54.8c3.2-3.2 3.2-8.3 0-11.5z"/>
+            </svg>
+          </div>
+          <span class="tech-name">Git</span>
+        </div>
+        <!-- Bash -->
+        <div class="tech-item">
+          <div class="tech-icon" style="--tech-color: #4EAA25">
+            <svg viewBox="0 0 128 128">
+              <rect x="10" y="20" width="108" height="88" rx="8" fill="none" stroke="currentColor" stroke-width="6"/>
+              <line x1="30" y1="45" x2="70" y2="45" stroke="currentColor" stroke-width="5"/>
+              <line x1="30" y1="64" x2="98" y2="64" stroke="currentColor" stroke-width="5"/>
+              <line x1="30" y1="83" x2="80" y2="83" stroke="currentColor" stroke-width="5"/>
+            </svg>
+          </div>
+          <span class="tech-name">Bash</span>
+        </div>
+        <!-- CCNA -->
+        <div class="tech-item">
+          <div class="tech-icon" style="--tech-color: #1BA0D7">
+            <svg viewBox="0 0 128 128">
+              <path fill="currentColor" d="M64 4L4 34v60l60 30 60-30V34L64 4zm0 20l40 20-40 20-40-20 40-20zM14 46l46 23v46l-46-23V46zm100 0v46l-46 23V69l46-23z"/>
+            </svg>
+          </div>
+          <span class="tech-name">CCNA</span>
+        </div>
+        <!-- Scrum -->
+        <div class="tech-item">
+          <div class="tech-icon" style="--tech-color: #6DB33F">
+            <svg viewBox="0 0 128 128">
+              <circle cx="64" cy="64" r="56" fill="none" stroke="currentColor" stroke-width="8"/>
+              <path fill="currentColor" d="M92 44L56 80 36 60l-8 8 28 28 44-44z"/>
+            </svg>
+          </div>
+          <span class="tech-name">Scrum</span>
         </div>
       </div>
     </div>
@@ -118,87 +379,4 @@ interface TechItem {
     }
   `]
 })
-export class TechCarouselComponent {
-  technologies: TechItem[] = [
-    { 
-      name: 'PHP', 
-      color: '#777BB4',
-      icon: '<path d="M7.01 10.71h2.06c1.46 0 2.56-.32 3.3-.96.73-.64 1.1-1.53 1.1-2.67 0-1.02-.32-1.79-.96-2.3-.64-.52-1.56-.78-2.76-.78H6.12l.89 6.71zm8.58-3.63c0 1.64-.56 2.93-1.68 3.85-1.12.92-2.67 1.38-4.65 1.38H7.37l-.88 6.69H3.89l2.38-18h5.35c2.07 0 3.63.46 4.69 1.38 1.06.92 1.59 2.27 1.59 4.06l-.21 1.64zm4.66 6.22h2.25c.96 0 1.75-.19 2.36-.56.61-.37 1.02-.91 1.22-1.61.2-.7.23-1.53.09-2.49-.14-.96-.42-1.77-.84-2.43-.42-.66-.96-1.16-1.62-1.5-.66-.34-1.41-.51-2.25-.51h-2.09l-1.13 9.1h2.01zm1.93-12.1c1.58 0 2.92.35 4.02 1.06 1.1.71 1.91 1.68 2.43 2.91.52 1.23.71 2.62.57 4.17-.14 1.55-.52 2.93-1.14 4.14-.62 1.21-1.47 2.17-2.55 2.88-1.08.71-2.35 1.06-3.81 1.06h-5.67l2.85-21.23h3.3v-.01z"/>'
-    },
-    { 
-      name: 'Laravel', 
-      color: '#FF2D20',
-      icon: '<path d="M12 2.25c-5.376 0-9.75 4.374-9.75 9.75s4.374 9.75 9.75 9.75 9.75-4.374 9.75-9.75S17.376 2.25 12 2.25zm0 18c-4.549 0-8.25-3.701-8.25-8.25S7.451 3.75 12 3.75s8.25 3.701 8.25 8.25-3.701 8.25-8.25 8.25zm-1.5-13.5v9l7.5-4.5-7.5-4.5z"/>'
-    },
-    { 
-      name: 'Vue.js', 
-      color: '#4FC08D',
-      icon: '<path d="M12 2L2 19h20L12 2zm0 3.5L18.5 17h-13L12 5.5z"/>'
-    },
-    { 
-      name: 'Angular', 
-      color: '#DD0031',
-      icon: '<path d="M12 2.5L2 6l1.5 13L12 22l8.5-3L22 6l-10-3.5zm0 2.5l6 12h-2.5l-1.5-3.5h-4l-1.5 3.5H6l6-12zm-2.5 7.5h5L12 7l-2.5 5.5z"/>'
-    },
-    { 
-      name: 'TypeScript', 
-      color: '#3178C6',
-      icon: '<path d="M2 2h20v20H2V2zm16.5 13.5v-1.8h-3v-1.2h1.8v-1.8h-1.8V9h3V7.2h-5.4v9.6h1.8v-2.1h1.8v1.2h3v1.8h1.8v-1.8h-1.8v.6h-1.2z"/>'
-    },
-    { 
-      name: 'Astro', 
-      color: '#FF5D01',
-      icon: '<path d="M12 2L2 8.5l1.5 11L12 22l8.5-2.5L22 8.5 12 2zm0 3l7 4.5-1 8-6 1.5-6-1.5-1-8 7-4.5z"/>'
-    },
-    { 
-      name: 'Python', 
-      color: '#3776AB',
-      icon: '<path d="M12 2c-2 0-4 .5-4 2v2h4v1H6c-2 0-4 1.5-4 4s2 4 4 4h2v-2c0-2 1.5-4 4-4h4c1.5 0 2-1 2-2V4c0-1.5-2-2-4-2zm-2 2c.5 0 1 .5 1 1s-.5 1-1 1-1-.5-1-1 .5-1 1-1zM7 10v3c0 2 1.5 4 4 4h4c2 0 4-.5 4-2v-2h-4v-1h6c2 0 4-1.5 4-4s-2-4-4-4h-2v2c0 2-1.5 4-4 4H7zm10 2c-.5 0-1 .5-1 1s.5 1 1 1 1-.5 1-1-.5-1-1-1z"/>'
-    },
-    { 
-      name: 'Linux', 
-      color: '#FCC624',
-      icon: '<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6zm4 4h-2v-2h2v2zm0-4h-2V7h2v6z"/>'
-    },
-    { 
-      name: 'AWS', 
-      color: '#FF9900',
-      icon: '<path d="M6.5 12c0-1.5 1-2.5 2.5-2.5.5 0 1 .1 1.5.3l.5-1.5c-.6-.3-1.3-.4-2-.4-2.5 0-4 1.7-4 4s1.5 4 4 4c.7 0 1.4-.1 2-.4l-.5-1.5c-.5.2-1 .3-1.5.3-1.5 0-2.5-1-2.5-2.5zm7.5-4h-2v8h2V8zm4 0h-2v8h2v-3.5c0-1.5 1-2 2-2v-2c-1 0-1.7.5-2 1.5V8z"/>'
-    },
-    { 
-      name: 'MySQL', 
-      color: '#4479A1',
-      icon: '<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>'
-    },
-    { 
-      name: 'PostgreSQL', 
-      color: '#336791',
-      icon: '<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>'
-    },
-    { 
-      name: 'MongoDB', 
-      color: '#47A248',
-      icon: '<path d="M12 2c1.5 3 2 6.5 2 10s-1 6-2 7.5c-1-1.5-2-4-2-7.5s.5-7 2-10z"/>'
-    },
-    { 
-      name: 'Git', 
-      color: '#F05032',
-      icon: '<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>'
-    },
-    { 
-      name: 'Bash', 
-      color: '#4EAA25',
-      icon: '<path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h10v2H4z"/>'
-    },
-    { 
-      name: 'CCNA', 
-      color: '#1BA0D7',
-      icon: '<path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>'
-    },
-    { 
-      name: 'Scrum', 
-      color: '#6DB33F',
-      icon: '<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>'
-    }
-  ];
-}
+export class TechCarouselComponent {}
