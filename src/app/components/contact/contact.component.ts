@@ -3,16 +3,17 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import emailjs from 'emailjs-com';
+import { ScrollAnimationDirective } from '../../directives/scroll-animation.directive';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, FormsModule, TranslateModule],
+  imports: [CommonModule, FormsModule, TranslateModule, ScrollAnimationDirective],
   template: `
     <section id="contacto" class="contact">
       <div class="container">
-        <h2 class="section-title">{{ 'CONTACT.TITLE' | translate }}</h2>
-        <p class="subtitle">{{ 'CONTACT.SUBTITLE' | translate }}</p>
+        <h2 class="section-title scroll-animate">{{ 'CONTACT.TITLE' | translate }}</h2>
+        <p class="subtitle scroll-animate delay-1">{{ 'CONTACT.SUBTITLE' | translate }}</p>
         
         <form class="contact-form" (ngSubmit)="onSubmit()" #contactForm="ngForm">
           <div class="form-group">

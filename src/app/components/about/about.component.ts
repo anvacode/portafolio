@@ -1,25 +1,26 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
+import { ScrollAnimationDirective } from '../../directives/scroll-animation.directive';
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [CommonModule, TranslateModule],
+  imports: [CommonModule, TranslateModule, ScrollAnimationDirective],
   template: `
     <section id="sobre-mi" class="about">
       <div class="container">
-        <h2 class="section-title">{{ 'ABOUT.TITLE' | translate }}</h2>
+        <h2 class="section-title scroll-animate">{{ 'ABOUT.TITLE' | translate }}</h2>
         
         <div class="about-content">
-          <div class="about-text">
+          <div class="about-text scroll-animate delay-1">
             <p class="description">{{ 'ABOUT.DESCRIPTION' | translate }}</p>
           </div>
 
-          <div class="technologies">
+          <div class="technologies scroll-animate delay-2">
             <h3>{{ 'ABOUT.TECHNOLOGIES' | translate }}</h3>
             <div class="tech-grid">
-              <div class="tech-item" *ngFor="let tech of technologies">
+              <div class="tech-item scroll-animate-scale" *ngFor="let tech of technologies; let i = index" [style.transition-delay]="i * 0.05 + 's'">
                 <span class="tech-name">{{ tech }}</span>
               </div>
             </div>
