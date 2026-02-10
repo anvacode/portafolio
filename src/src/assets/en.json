@@ -1,0 +1,40 @@
+{
+  "HEADER": {
+    "HOME": "Home",
+    "ABOUT": "About",
+    "PROJECTS": "Projects",
+    "CONTACT": "Contact"
+  },
+  "HERO": {
+    "GREETING": "Hello, I'm",
+    "TITLE": "Full Stack Developer",
+    "SUBTITLE": "I create elegant and functional digital experiences",
+    "CTA": "View projects"
+  },
+  "ABOUT": {
+    "TITLE": "About Me",
+    "DESCRIPTION": "I'm a passionate developer dedicated to creating innovative solutions. I specialize in building modern web applications with cutting-edge technologies.",
+    "TECHNOLOGIES": "Technologies"
+  },
+  "PROJECTS": {
+    "TITLE": "Projects",
+    "VIEW_PROJECT": "View project",
+    "VIEW_CODE": "View code",
+    "LOADING": "Loading projects..."
+  },
+  "CONTACT": {
+    "TITLE": "Contact",
+    "SUBTITLE": "Have a project in mind? Let's talk!",
+    "NAME": "Name",
+    "EMAIL": "Email",
+    "MESSAGE": "Message",
+    "SEND": "Send message",
+    "SENDING": "Sending...",
+    "SUCCESS": "Message sent successfully!",
+    "ERROR": "There was an error sending the message. Please try again."
+  },
+  "FOOTER": {
+    "MADE_WITH": "Made with",
+    "BY": "by"
+  }
+}
