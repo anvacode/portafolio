@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { ScrollAnimationDirective } from '../../directives/scroll-animation.directive';
+import { TechCarouselComponent } from '../tech-carousel/tech-carousel.component';
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [CommonModule, TranslateModule, ScrollAnimationDirective],
+  imports: [CommonModule, TranslateModule, ScrollAnimationDirective, TechCarouselComponent],
   template: `
     <section id="sobre-mi" class="about">
       <div class="container">
@@ -39,11 +40,7 @@ import { ScrollAnimationDirective } from '../../directives/scroll-animation.dire
                   <span class="tech-icon">⚡</span>
                   {{ 'ABOUT.TECHNOLOGIES' | translate }}
                 </h3>
-                <div class="tech-grid">
-                  <div class="tech-item" *ngFor="let tech of technologies" [attr.data-tech]="tech">
-                    <span class="tech-name">{{ tech }}</span>
-                  </div>
-                </div>
+                <app-tech-carousel></app-tech-carousel>
               </div>
             </div>
           </div>
@@ -228,52 +225,8 @@ import { ScrollAnimationDirective } from '../../directives/scroll-animation.dire
       font-size: 1.5rem;
     }
 
-    .tech-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
-
-    .tech-item {
-      background: linear-gradient(135deg, rgba(255, 107, 107, 0.1) 0%, rgba(255, 107, 107, 0.05) 100%);
-      border: 1px solid rgba(255, 107, 107, 0.2);
-      padding: 0.6rem 1.2rem;
-      border-radius: 50px;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .tech-item::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, var(--accent-color), #ff8585);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .tech-item:hover {
-      transform: translateY(-2px) scale(1.05);
-      border-color: var(--accent-color);
-      box-shadow: 0 10px 30px rgba(255, 107, 107, 0.2);
-    }
-
-    .tech-item:hover::before {
-      opacity: 1;
-    }
-
-    .tech-name {
-      position: relative;
-      font-weight: 500;
-      color: var(--text-primary);
-      font-size: 0.95rem;
-      transition: color 0.3s ease;
-      z-index: 1;
-    }
-
-    .tech-item:hover .tech-name {
-      color: white;
+    .technologies {
+      margin-top: 2rem;
     }
 
     @media (max-width: 968px) {
@@ -322,11 +275,4 @@ import { ScrollAnimationDirective } from '../../directives/scroll-animation.dire
     }
   `]
 })
-export class AboutComponent {
-  technologies = [
-    'PHP', 'Laravel', 'Vue.js', 'Angular', 'JavaScript', 'TypeScript', 'Astro',
-    'Python', 'HTML5', 'CSS3', 'Bash', 'Linux', 'Ubuntu Server',
-    'Git', 'MySQL', 'PostgreSQL', 'MariaDB', 'MongoDB', 'phpMyAdmin',
-    'AWS', 'CCNA', 'Scrum'
-  ];
-}
+export class AboutComponent {}
