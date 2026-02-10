@@ -31,5 +31,5 @@ Es un sitio simple con:
 
 ## Contacto
 
-Derwin Andrés Vacca Ropero
+davaccar@ufpso.edu.co
 GitHub: @anvacode
