@@ -15,10 +15,20 @@ import { TranslateModule } from '@ngx-translate/core';
         </h1>
         <h2 class="subtitle">{{ 'HERO.TITLE' | translate }}</h2>
         <p class="description">{{ 'HERO.SUBTITLE' | translate }}</p>
-        <a href="#proyectos" class="cta-button">
-          {{ 'HERO.CTA' | translate }}
-          <span class="arrow">→</span>
-        </a>
+        <div class="cta-buttons">
+          <a href="#proyectos" class="cta-button">
+            {{ 'HERO.CTA' | translate }}
+            <span class="arrow">→</span>
+          </a>
+          <a href="assets/cv/cv-derwin-vacca.pdf" download class="cta-button secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            Descargar CV
+          </a>
+        </div>
       </div>
       <div class="scroll-indicator">
         <div class="mouse">
@@ -84,6 +94,13 @@ import { TranslateModule } from '@ngx-translate/core';
       line-height: 1.7;
     }
 
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
     .cta-button {
       display: inline-flex;
       align-items: center;
@@ -102,6 +119,18 @@ import { TranslateModule } from '@ngx-translate/core';
       background: var(--accent-hover);
       transform: translateY(-2px);
       box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+    }
+
+    .cta-button.secondary {
+      background: transparent;
+      color: var(--text-primary);
+      border: 2px solid var(--accent-color);
+      box-shadow: none;
+    }
+
+    .cta-button.secondary:hover {
+      background: var(--accent-color);
+      color: white;
     }
 
     .arrow {
