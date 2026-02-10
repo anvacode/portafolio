@@ -3,18 +3,19 @@ import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { GithubService } from '../../services/github.service';
 import { Project } from '../../models/project.model';
+import { ScrollAnimationDirective } from '../../directives/scroll-animation.directive';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule, TranslateModule],
+  imports: [CommonModule, TranslateModule, ScrollAnimationDirective],
   template: `
     <section id="proyectos" class="projects">
       <div class="container">
-        <h2 class="section-title">{{ 'PROJECTS.TITLE' | translate }}</h2>
+        <h2 class="section-title scroll-animate">{{ 'PROJECTS.TITLE' | translate }}</h2>
         
         <div class="projects-grid" *ngIf="!isLoading">
-          <div class="project-card" *ngFor="let project of projects">
+          <div class="project-card scroll-animate" *ngFor="let project of projects; let i = index" [style.transition-delay]="i * 0.1 + 's'">
             <div class="project-header">
               <h3 class="project-title">{{ project.name }}</h3>
               <div class="project-stats">
