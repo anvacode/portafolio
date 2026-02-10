@@ -246,19 +246,24 @@ export class ContactComponent {
     this.showError = false;
 
     const templateParams = {
+      to_name: 'Derwin',
       from_name: this.formData.name,
       from_email: this.formData.email,
-      message: this.formData.message
+      message: this.formData.message,
+      reply_to: this.formData.email
     };
 
+    console.log('Enviando datos:', templateParams);
+
     emailjs.send(this.SERVICE_ID, this.TEMPLATE_ID, templateParams, this.USER_ID)
-      .then(() => {
+      .then((response) => {
+        console.log('Email enviado:', response);
         this.showSuccess = true;
         this.formData = { name: '', email: '', message: '' };
         setTimeout(() => this.showSuccess = false, 5000);
       })
       .catch((error) => {
-        console.error('Error sending email:', error);
+        console.error('Error detallado:', error);
         this.showError = true;
         setTimeout(() => this.showError = false, 5000);
       })
