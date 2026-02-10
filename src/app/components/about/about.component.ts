@@ -17,7 +17,7 @@ import { TechCarouselComponent } from '../tech-carousel/tech-carousel.component'
             <div class="profile-container">
               <div class="profile-glow"></div>
               <div class="profile-image">
-                <img src="assets/images/foto-perfil.jpeg" alt="Derwin Andrés Vacca Ropero">
+                <img src="assets/images/foto-perfil.jpg" alt="Derwin Andrés Vacca Ropero">
               </div>
               <div class="profile-ring"></div>
             </div>
@@ -125,6 +125,7 @@ import { TechCarouselComponent } from '../tech-carousel/tech-carousel.component'
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center 20%;
       transition: transform 0.5s ease;
     }
 

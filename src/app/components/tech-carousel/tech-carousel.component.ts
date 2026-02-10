@@ -130,6 +130,7 @@ export class TechCarouselComponent {
     { name: 'Laravel', iconClass: 'devicon-laravel-original colored', color: '#FF2D20' },
     { name: 'Vue.js', iconClass: 'devicon-vuejs-plain colored', color: '#4FC08D' },
     { name: 'Angular', iconClass: 'devicon-angularjs-plain colored', color: '#DD0031' },
+    { name: 'Java', iconClass: 'devicon-java-plain colored', color: '#007396' },
     { name: 'TypeScript', iconClass: 'devicon-typescript-plain colored', color: '#3178C6' },
     { name: 'Astro', iconClass: 'devicon-astro-plain colored', color: '#FF5D01' },
     { name: 'Python', iconClass: 'devicon-python-plain colored', color: '#3776AB' },
@@ -141,6 +142,7 @@ export class TechCarouselComponent {
     { name: 'MongoDB', iconClass: 'devicon-mongodb-plain colored', color: '#47A248' },
     { name: 'Git', iconClass: 'devicon-git-plain colored', color: '#F05032' },
     { name: 'Bash', iconClass: 'devicon-bash-plain colored', color: '#4EAA25' },
-    { name: 'Node.js', iconClass: 'devicon-nodejs-plain colored', color: '#339933' }
+    { name: 'Node.js', iconClass: 'devicon-nodejs-plain colored', color: '#339933' },
+    { name: 'Tailwind', iconClass: 'devicon-tailwindcss-original colored', color: '#06B6D4' }
   ];
 }
