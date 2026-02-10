@@ -13,7 +13,10 @@ import { ScrollAnimationDirective } from '../../directives/scroll-animation.dire
         <h2 class="section-title scroll-animate">{{ 'ABOUT.TITLE' | translate }}</h2>
         
         <div class="about-content">
-          <div class="about-text scroll-animate delay-1">
+          <div class="about-profile scroll-animate delay-1">
+            <div class="profile-image">
+              <img src="assets/images/foto-perfil.jpeg" alt="Derwin Andrés Vacca Ropero">
+            </div>
             <p class="description">{{ 'ABOUT.DESCRIPTION' | translate }}</p>
           </div>
 
@@ -63,8 +66,24 @@ import { ScrollAnimationDirective } from '../../directives/scroll-animation.dire
       gap: 3rem;
     }
 
-    .about-text {
+    .about-profile {
       text-align: center;
+    }
+
+    .profile-image {
+      width: 200px;
+      height: 200px;
+      margin: 0 auto 2rem;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid var(--accent-color);
+      box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+    }
+
+    .profile-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .description {
@@ -121,6 +140,11 @@ import { ScrollAnimationDirective } from '../../directives/scroll-animation.dire
 
       .section-title {
         font-size: 2rem;
+      }
+
+      .profile-image {
+        width: 150px;
+        height: 150px;
       }
     }
   `]
