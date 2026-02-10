@@ -126,7 +126,9 @@ import { TranslateModule } from '@ngx-translate/core';
 })
 export class AboutComponent {
   technologies = [
-    'PHP', 'Laravel', 'Vue.js', 'JavaScript', 'HTML5', 'CSS3',
-    'Bash', 'CCNA', 'Git', 'MySQL'
+    'PHP', 'Laravel', 'Vue.js', 'Angular', 'JavaScript', 'TypeScript', 'Astro',
+    'Python', 'HTML5', 'CSS3', 'Bash', 'Linux', 'Ubuntu Server',
+    'Git', 'MySQL', 'PostgreSQL', 'MariaDB', 'MongoDB', 'phpMyAdmin',
+    'AWS', 'CCNA', 'Scrum'
   ];
 }
