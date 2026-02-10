@@ -11,6 +11,7 @@ import { TechCarouselComponent } from '../tech-carousel/tech-carousel.component'
   template: `
     <section id="sobre-mi" class="about">
       <div class="container">
+        <!-- Primera fila: Foto y About -->
         <div class="about-wrapper">
           <div class="about-visual scroll-animate">
             <div class="profile-container">
@@ -34,16 +35,17 @@ import { TechCarouselComponent } from '../tech-carousel/tech-carousel.component'
             <h2 class="section-title">{{ 'ABOUT.TITLE' | translate }}</h2>
             <div class="about-card">
               <p class="description">{{ 'ABOUT.DESCRIPTION' | translate }}</p>
-              
-              <div class="technologies">
-                <h3 class="tech-title">
-                  <span class="tech-icon">⚡</span>
-                  {{ 'ABOUT.TECHNOLOGIES' | translate }}
-                </h3>
-                <app-tech-carousel></app-tech-carousel>
-              </div>
             </div>
           </div>
+        </div>
+        
+        <!-- Segunda fila: Carrusel de tecnologías -->
+        <div class="tech-section scroll-animate delay-2">
+          <h3 class="tech-section-title">
+            <span class="tech-icon">⚡</span>
+            {{ 'ABOUT.TECHNOLOGIES' | translate }}
+          </h3>
+          <app-tech-carousel></app-tech-carousel>
         </div>
       </div>
     </section>
@@ -227,6 +229,28 @@ import { TechCarouselComponent } from '../tech-carousel/tech-carousel.component'
 
     .technologies {
       margin-top: 2rem;
+    }
+
+    .tech-section {
+      margin-top: 4rem;
+      padding-top: 3rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .tech-section-title {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      text-align: center;
+    }
+
+    .tech-section-title .tech-icon {
+      font-size: 1.8rem;
     }
 
     @media (max-width: 968px) {
