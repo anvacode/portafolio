@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, AfterViewInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { ThemeService } from '../../services/theme.service';
@@ -11,13 +11,15 @@ import { LanguageService } from '../../services/language.service';
   template: `
     <header class="header" [class.scrolled]="isScrolled">
       <nav class="nav">
-        <a href="#inicio" class="logo">Portfolio</a>
+        <a href="#inicio" class="logo">anvacode</a>
         
         <div class="nav-links" [class.active]="isMenuOpen">
-          <a href="#inicio" (click)="closeMenu()">{{ 'HEADER.HOME' | translate }}</a>
-          <a href="#sobre-mi" (click)="closeMenu()">{{ 'HEADER.ABOUT' | translate }}</a>
-          <a href="#proyectos" (click)="closeMenu()">{{ 'HEADER.PROJECTS' | translate }}</a>
-          <a href="#contacto" (click)="closeMenu()">{{ 'HEADER.CONTACT' | translate }}</a>
+          <a href="#inicio" (click)="closeMenu()" [class.active]="activeSection === 'inicio'">{{ 'HEADER.HOME' | translate }}</a>
+          <a href="#sobre-mi" (click)="closeMenu()" [class.active]="activeSection === 'sobre-mi'">{{ 'HEADER.ABOUT' | translate }}</a>
+          <a href="#experiencia" (click)="closeMenu()" [class.active]="activeSection === 'experiencia'">{{ 'HEADER.EXPERIENCE' | translate }}</a>
+          <a href="#certificaciones" (click)="closeMenu()" [class.active]="activeSection === 'certificaciones'">{{ 'HEADER.CERTIFICATIONS' | translate }}</a>
+          <a href="#proyectos" (click)="closeMenu()" [class.active]="activeSection === 'proyectos'">{{ 'HEADER.PROJECTS' | translate }}</a>
+          <a href="#contacto" (click)="closeMenu()" [class.active]="activeSection === 'contacto'">{{ 'HEADER.CONTACT' | translate }}</a>
         </div>
 
         <div class="controls">
@@ -108,11 +110,13 @@ import { LanguageService } from '../../services/language.service';
       transition: width 0.3s ease;
     }
 
-    .nav-links a:hover::after {
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
       width: 100%;
     }
 
-    .nav-links a:hover {
+    .nav-links a:hover,
+    .nav-links a.active {
       color: var(--accent-color);
     }
 
@@ -181,7 +185,7 @@ import { LanguageService } from '../../services/language.service';
       transform: rotate(-45deg) translate(5px, -5px);
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 968px) {
       .nav-links {
         position: fixed;
         top: 70px;
@@ -210,14 +214,49 @@ import { LanguageService } from '../../services/language.service';
     }
   `]
 })
-export class HeaderComponent {
+export class HeaderComponent implements AfterViewInit, OnDestroy {
   isScrolled = false;
   isMenuOpen = false;
+  activeSection = 'inicio';
+
+  private observer: IntersectionObserver | null = null;
 
   constructor(
     public themeService: ThemeService,
     public languageService: LanguageService
   ) {}
+
+  ngAfterViewInit(): void {
+    this.setupIntersectionObserver();
+  }
+
+  ngOnDestroy(): void {
+    this.observer?.disconnect();
+  }
+
+  private setupIntersectionObserver(): void {
+    const sections = ['inicio', 'sobre-mi', 'experiencia', 'certificaciones', 'proyectos', 'contacto'];
+    
+    this.observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            this.activeSection = entry.target.id;
+          }
+        });
+      },
+      {
+        rootMargin: '-20% 0px -60% 0px'
+      }
+    );
+
+    sections.forEach((id) => {
+      const section = document.getElementById(id);
+      if (section) {
+        this.observer?.observe(section);
+      }
+    });
+  }
 
   @HostListener('window:scroll')
   onScroll(): void {

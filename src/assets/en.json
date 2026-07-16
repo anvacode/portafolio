@@ -2,19 +2,104 @@
   "HEADER": {
     "HOME": "Home",
     "ABOUT": "About",
+    "EXPERIENCE": "Experience",
+    "CERTIFICATIONS": "Certifications",
     "PROJECTS": "Projects",
     "CONTACT": "Contact"
   },
   "HERO": {
     "GREETING": "Hello, I'm",
-    "TITLE": "Full Stack Developer",
-    "SUBTITLE": "I create elegant and functional digital experiences",
+    "TITLE": "Systems Engineer | Backend Developer",
+    "SUBTITLE": "Networks, Cloud & Code",
     "CTA": "View projects"
   },
   "ABOUT": {
     "TITLE": "About Me",
     "DESCRIPTION": "I'm a passionate developer dedicated to creating innovative solutions. I specialize in building modern web applications with cutting-edge technologies.",
     "TECHNOLOGIES": "Technologies"
+  },
+  "EXPERIENCE": {
+    "TITLE": "Experience",
+    "ITEMS": [
+      {
+        "company": "Arsenal Tire Performance Tech",
+        "role": "Software Developer",
+        "location": "Monterrey, Mexico (Remote)",
+        "period": "January 2026 – Present",
+        "description": [
+          "Developed a Flutter/Dart mobile application for real-time monitoring of IoT sensors embedded in vehicle tires, supporting tire performance and condition tracking for mining sector operations",
+          "Led end-to-end development (front-end and back-end) of a React Native audio-streaming application, including audio playback, offline downloads, and user library management",
+          "Collaborated remotely with a cross-functional team using GitHub for version control, pull requests, code reviews, and branching strategy"
+        ]
+      },
+      {
+        "company": "Universidad Francisco de Paula Santander Seccional Ocaña — CIDIA",
+        "role": "Intern — AI Research Center",
+        "location": "Ocaña, Colombia",
+        "period": "February 2026 – June 2026",
+        "description": [
+          "Maintained and configured Ubuntu Server with dockerized services in a microservices architecture for warehouse and datalake projects",
+          "Developed a Flutter mobile application for capturing images, audio, and video to feed the datalake backed by the server",
+          "Managed virtualization with Proxmox: created VMs, configured users and permissions",
+          "Handled SSH configuration, remote connections, and information security",
+          "Participated in requirements gathering and server administration"
+        ]
+      }
+    ]
+  },
+  "CERTIFICATIONS": {
+    "TITLE": "Certifications",
+    "ITEMS": [
+      {
+        "name": "AWS Cloud Practitioner",
+        "issuer": "Platzi",
+        "date": "",
+        "icon": "☁️",
+        "pdf": "certifications/aws-cloud-practitioner.pdf"
+      },
+      {
+        "name": "Cloud Administrator",
+        "issuer": "Capacitate para el empleo",
+        "date": "Oct 2025",
+        "icon": "☁️",
+        "pdf": "certifications/cloud-administrator.pdf"
+      },
+      {
+        "name": "Database Foundations",
+        "issuer": "CLMS",
+        "date": "Jun 2024",
+        "icon": "🗄️",
+        "pdf": "certifications/database-foundations.pdf"
+      },
+      {
+        "name": "Cybersecurity",
+        "issuer": "Universidad Distrital Francisco José de Caldas",
+        "date": "",
+        "icon": "🔒",
+        "pdf": "certifications/cybersecurity.pdf"
+      },
+      {
+        "name": "Generative AI: Prompt Engineering Basics",
+        "issuer": "IBM / Coursera",
+        "date": "May 2025",
+        "icon": "🤖",
+        "pdf": "certifications/generative-ai.pdf"
+      },
+      {
+        "name": "Emerging Technologies Projects Formulation",
+        "issuer": "UNAB",
+        "date": "Jun 2026",
+        "icon": "📋",
+        "pdf": "certifications/emerging-tech-projects.pdf"
+      },
+      {
+        "name": "1st Place — Steel Night Fury UTBot",
+        "issuer": "UTB / Robotic People Fest",
+        "date": "Nov 2024",
+        "icon": "🏆",
+        "pdf": "certifications/steel-night-fury.pdf"
+      }
+    ]
   },
   "PROJECTS": {
     "TITLE": "Projects",
@@ -31,7 +116,15 @@
     "SEND": "Send message",
     "SENDING": "Sending...",
     "SUCCESS": "Message sent successfully!",
-    "ERROR": "There was an error sending the message. Please try again."
+    "ERROR": "There was an error sending the message. Please try again.",
+    "INFO": {
+      "AVAILABILITY_LABEL": "Freelance available",
+      "AVAILABILITY_VALUE": "Remote projects",
+      "LOCATION_LABEL": "Location",
+      "LOCATION_VALUE": "Colombia / Remote",
+      "RESPONSE_LABEL": "Response time",
+      "RESPONSE_VALUE": "24-48 hours"
+    }
   },
   "FOOTER": {
     "MADE_WITH": "Made with",

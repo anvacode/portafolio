@@ -2,19 +2,104 @@
   "HEADER": {
     "HOME": "Inicio",
     "ABOUT": "Sobre mí",
+    "EXPERIENCE": "Experiencia",
+    "CERTIFICATIONS": "Certificaciones",
     "PROJECTS": "Proyectos",
     "CONTACT": "Contacto"
   },
   "HERO": {
     "GREETING": "Hola, soy",
-    "TITLE": "Desarrollador Full Stack",
-    "SUBTITLE": "Creo experiencias digitales elegantes y funcionales",
+    "TITLE": "Ingeniero de Sistemas | Backend Developer",
+    "SUBTITLE": "Redes, Cloud y Código",
     "CTA": "Ver proyectos"
   },
   "ABOUT": {
     "TITLE": "Sobre mí",
     "DESCRIPTION": "Soy un desarrollador apasionado por crear soluciones innovadoras. Me especializo en construir aplicaciones web modernas con tecnologías de vanguardia.",
     "TECHNOLOGIES": "Tecnologías"
+  },
+  "EXPERIENCE": {
+    "TITLE": "Experiencia",
+    "ITEMS": [
+      {
+        "company": "Arsenal Tire Performance Tech",
+        "role": "Software Developer",
+        "location": "Monterrey, México (Remoto)",
+        "period": "Enero 2026 – Presente",
+        "description": [
+          "Desarrollé una aplicación móvil en Flutter/Dart para monitoreo en tiempo real de sensores IoT incrustados en neumáticos de vehículos, apoyando el seguimiento de rendimiento y condición para operaciones del sector minero",
+          "Lideré el desarrollo end-to-end (frontend y backend) de una aplicación de audio-streaming/audiolibros en React Native, incluyendo reproducción de audio, descargas offline y gestión de biblioteca de usuario",
+          "Colaboré remotamente con un equipo multifuncional usando GitHub para control de versiones, pull requests, code reviews y estrategia de branching"
+        ]
+      },
+      {
+        "company": "Universidad Francisco de Paula Santander Seccional Ocaña — CIDIA",
+        "role": "Practicante — Centro de Investigación en IA",
+        "location": "Ocaña, Colombia",
+        "period": "Febrero 2026 – Junio 2026",
+        "description": [
+          "Mantenimiento y configuración de servidor Ubuntu Server con servicios dockerizados en arquitectura de microservicios para proyectos de warehouse y datalake",
+          "Desarrollo de aplicación móvil Flutter para captura de imágenes, audio y video para alimentar el datalake respaldado en el servidor",
+          "Gestión de virtualización con Proxmox: creación de VMs, configuración de usuarios y permisos",
+          "Configuración de SSH, conexión remota y seguridad de la información",
+          "Participación en levantamiento de requisitos y administración del servidor"
+        ]
+      }
+    ]
+  },
+  "CERTIFICATIONS": {
+    "TITLE": "Certificaciones",
+    "ITEMS": [
+      {
+        "name": "AWS Cloud Practitioner",
+        "issuer": "Platzi",
+        "date": "",
+        "icon": "☁️",
+        "pdf": "certifications/aws-cloud-practitioner.pdf"
+      },
+      {
+        "name": "Administrador de la nube",
+        "issuer": "Capacitate para el empleo",
+        "date": "Oct 2025",
+        "icon": "☁️",
+        "pdf": "certifications/cloud-administrator.pdf"
+      },
+      {
+        "name": "Database Foundations",
+        "issuer": "CLMS",
+        "date": "Jun 2024",
+        "icon": "🗄️",
+        "pdf": "certifications/database-foundations.pdf"
+      },
+      {
+        "name": "Ciberseguridad",
+        "issuer": "Universidad Distrital Francisco José de Caldas",
+        "date": "",
+        "icon": "🔒",
+        "pdf": "certifications/cybersecurity.pdf"
+      },
+      {
+        "name": "Inteligencia Artificial Generativa: Fundamentos de Prompt Engineering",
+        "issuer": "IBM / Coursera",
+        "date": "May 2025",
+        "icon": "🤖",
+        "pdf": "certifications/generative-ai.pdf"
+      },
+      {
+        "name": "Formulación de Proyectos de Tecnologías Emergentes",
+        "issuer": "UNAB",
+        "date": "Jun 2026",
+        "icon": "📋",
+        "pdf": "certifications/emerging-tech-projects.pdf"
+      },
+      {
+        "name": "1er Lugar — Steel Night Fury UTBot",
+        "issuer": "UTB / Robotic People Fest",
+        "date": "Nov 2024",
+        "icon": "🏆",
+        "pdf": "certifications/steel-night-fury.pdf"
+      }
+    ]
   },
   "PROJECTS": {
     "TITLE": "Proyectos",
@@ -31,7 +116,15 @@
     "SEND": "Enviar mensaje",
     "SENDING": "Enviando...",
     "SUCCESS": "¡Mensaje enviado con éxito!",
-    "ERROR": "Hubo un error al enviar el mensaje. Intenta de nuevo."
+    "ERROR": "Hubo un error al enviar el mensaje. Intenta de nuevo.",
+    "INFO": {
+      "AVAILABILITY_LABEL": "Freelance disponible",
+      "AVAILABILITY_VALUE": "Proyectos remotos",
+      "LOCATION_LABEL": "Ubicación",
+      "LOCATION_VALUE": "Colombia / Remoto",
+      "RESPONSE_LABEL": "Respuesta",
+      "RESPONSE_VALUE": "24-48 horas"
+    }
   },
   "FOOTER": {
     "MADE_WITH": "Hecho con",
