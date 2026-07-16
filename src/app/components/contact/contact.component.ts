@@ -250,8 +250,19 @@ import { environment } from '../../../environments/environment';
       color: var(--text-primary);
       font-family: inherit;
       font-size: 1rem;
-      transition: border-color 0.3s ease;
+      transition: all 0.3s ease;
       outline: none;
+    }
+
+    .form-group input:hover,
+    .form-group textarea:hover {
+      border-color: var(--accent-color);
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent-color);
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
     }
 
     .form-group textarea {
@@ -286,6 +297,8 @@ import { environment } from '../../../environments/environment';
       color: var(--accent-color);
       background: var(--bg-secondary);
       font-weight: 500;
+      border-radius: 4px;
+      padding: 0 0.4rem;
     }
 
     .textarea-group textarea:focus ~ label,
@@ -396,6 +409,22 @@ import { environment } from '../../../environments/environment';
 
     @media (max-width: 600px) {
       .form-row { grid-template-columns: 1fr; }
+      .contact-form-wrapper { padding: 1.5rem; }
+      .form-group input,
+      .form-group textarea { padding: 1rem 0.875rem 0.625rem; font-size: 0.95rem; }
+      .form-group label { font-size: 0.95rem; }
+      .form-group input:focus ~ label,
+      .form-group input:not(:placeholder-shown) ~ label,
+      .form-group textarea:focus ~ label,
+      .form-group textarea:not(:placeholder-shown) ~ label { font-size: 0.7rem; }
+      .submit-btn { padding: 0.875rem 1.5rem; font-size: 0.95rem; }
+    }
+
+    @media (max-width: 480px) {
+      .contact { padding: 4rem 1rem; }
+      .contact-form-wrapper { padding: 1.25rem; border-radius: 12px; }
+      .section-title { font-size: 1.5rem; }
+      .subtitle { font-size: 1rem; }
     }
   `]
 })

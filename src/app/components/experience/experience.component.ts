@@ -23,14 +23,14 @@ interface Experience {
         
         <div class="experience-grid">
           <div class="experience-card scroll-animate" *ngFor="let exp of experiences; let i = index" [style.transition-delay]="i * 0.15 + 's'">
-            <span class="period">{{ exp.period }}</span>
             <div class="card-header">
               <div class="card-info">
                 <h3 class="role">{{ exp.role }}</h3>
                 <p class="company">{{ exp.company }}</p>
+                <p class="location">{{ exp.location }}</p>
               </div>
+              <span class="period">{{ exp.period }}</span>
             </div>
-            <p class="location">{{ exp.location }}</p>
             <div class="divider"></div>
             <ul class="description">
               <li *ngFor="let desc of exp.description">{{ desc }}</li>
@@ -84,7 +84,6 @@ interface Experience {
       display: flex;
       flex-direction: column;
       min-height: 320px;
-      position: relative;
     }
 
     .experience-card:hover {
@@ -95,7 +94,11 @@ interface Experience {
 
     .card-header {
       margin-bottom: 0.75rem;
-      padding-right: 8rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 0.75rem;
     }
 
     .role {
@@ -113,21 +116,20 @@ interface Experience {
     }
 
     .period {
-      position: absolute;
-      top: 2rem;
-      right: 2rem;
       font-size: 0.875rem;
       color: var(--text-secondary);
       background: var(--bg-primary);
       padding: 0.4rem 0.8rem;
       border-radius: 20px;
       white-space: nowrap;
+      flex-shrink: 0;
+      align-self: flex-start;
     }
 
     .location {
       font-size: 0.9rem;
       color: var(--text-secondary);
-      margin-bottom: 1rem;
+      margin: 0.5rem 0 0;
     }
 
     .divider {
@@ -177,6 +179,66 @@ interface Experience {
 
       .experience-card {
         padding: 1.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .card-header {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .period {
+        align-self: flex-start;
+        font-size: 0.8rem;
+        padding: 0.3rem 0.7rem;
+      }
+
+      .role {
+        font-size: 1.15rem;
+      }
+
+      .company {
+        font-size: 0.95rem;
+      }
+
+      .location {
+        font-size: 0.85rem;
+      }
+
+      .description li {
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .experience {
+        padding: 4rem 1rem;
+      }
+
+      .section-title {
+        font-size: 1.75rem;
+        margin-bottom: 2rem;
+      }
+
+      .experience-card {
+        padding: 1.25rem;
+        min-height: auto;
+      }
+
+      .role {
+        font-size: 1.1rem;
+      }
+
+      .period {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.6rem;
+      }
+
+      .description li {
+        font-size: 0.85rem;
+        padding-left: 1.25rem;
+        margin-bottom: 0.5rem;
       }
     }
   `]
