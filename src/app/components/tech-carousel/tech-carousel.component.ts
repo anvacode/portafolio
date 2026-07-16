@@ -126,6 +126,8 @@ interface TechItem {
 })
 export class TechCarouselComponent {
   technologies: TechItem[] = [
+    { name: 'React', iconClass: 'devicon-react-original colored', color: '#61DAFB' },
+    { name: 'Kotlin', iconClass: 'devicon-kotlin-plain colored', color: '#7F52FF' },
     { name: 'PHP', iconClass: 'devicon-php-plain colored', color: '#777BB4' },
     { name: 'Laravel', iconClass: 'devicon-laravel-original colored', color: '#FF2D20' },
     { name: 'Vue.js', iconClass: 'devicon-vuejs-plain colored', color: '#4FC08D' },

@@ -26,7 +26,7 @@ import { TranslateModule } from '@ngx-translate/core';
               <polyline points="7 10 12 15 17 10"></polyline>
               <line x1="12" y1="15" x2="12" y2="3"></line>
             </svg>
-            Descargar CV
+            CV
           </a>
         </div>
       </div>
@@ -104,10 +104,12 @@ import { TranslateModule } from '@ngx-translate/core';
     .cta-button {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 0.5rem;
       background: var(--accent-color);
       color: white;
-      padding: 1rem 2rem;
+      padding: 1rem 2.5rem;
+      min-width: 200px;
       border-radius: 50px;
       text-decoration: none;
       font-weight: 600;
@@ -143,39 +145,38 @@ import { TranslateModule } from '@ngx-translate/core';
 
     .scroll-indicator {
       position: absolute;
-      bottom: 3rem;
-      left: 50%;
-      transform: translateX(-50%);
+      bottom: 2rem;
+      right: 2rem;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 0.75rem;
-      opacity: 0.6;
+      gap: 0.5rem;
+      opacity: 0.5;
       animation: bounce 2s infinite;
     }
 
     .mouse {
-      width: 26px;
-      height: 40px;
+      width: 22px;
+      height: 34px;
       border: 2px solid var(--text-secondary);
-      border-radius: 13px;
+      border-radius: 11px;
       position: relative;
     }
 
     .wheel {
-      width: 4px;
-      height: 8px;
+      width: 3px;
+      height: 6px;
       background: var(--accent-color);
       border-radius: 2px;
       position: absolute;
-      top: 8px;
+      top: 6px;
       left: 50%;
       transform: translateX(-50%);
       animation: scroll 2s infinite;
     }
 
     .scroll-text {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       text-transform: uppercase;
       letter-spacing: 2px;
       color: var(--text-secondary);
@@ -194,13 +195,13 @@ import { TranslateModule } from '@ngx-translate/core';
 
     @keyframes bounce {
       0%, 20%, 50%, 80%, 100% {
-        transform: translateX(-50%) translateY(0);
+        transform: translateY(0);
       }
       40% {
-        transform: translateX(-50%) translateY(-10px);
+        transform: translateY(-8px);
       }
       60% {
-        transform: translateX(-50%) translateY(-5px);
+        transform: translateY(-4px);
       }
     }
 

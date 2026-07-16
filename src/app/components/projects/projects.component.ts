@@ -263,9 +263,10 @@ export class ProjectsComponent implements OnInit {
     const reposToShow = [
       'english-ai-learning-app',
       'agrigest',
-      'autotronicars',
       'biblioteca',
-      'educational-website'
+      'warehouse',
+      'autotronicars_soa_2',
+      'portafolio'
     ];
 
     this.githubService.getSpecificRepositories(reposToShow).subscribe({
