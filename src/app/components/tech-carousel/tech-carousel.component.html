@@ -1,0 +1,17 @@
+<div class="tech-carousel-container">
+  <div class="carousel-track">
+    <div class="tech-item" *ngFor="let tech of technologies">
+      <div class="tech-icon" [style.--tech-color]="tech.color">
+        <i [class]="tech.iconClass"></i>
+      </div>
+      <span class="tech-name">{{ tech.name }}</span>
+    </div>
+    <!-- Duplicado para efecto infinito -->
+    <div class="tech-item" *ngFor="let tech of technologies">
+      <div class="tech-icon" [style.--tech-color]="tech.color">
+        <i [class]="tech.iconClass"></i>
+      </div>
+      <span class="tech-name">{{ tech.name }}</span>
+    </div>
+  </div>
+</div>
