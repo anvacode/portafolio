@@ -1,4 +1,12 @@
 {
+  "COMMON": {
+    "CLOSE": "Close",
+    "BACK_TO_TOP": "Back to top"
+  },
+  "SEO": {
+    "TITLE": "Derwin Vacca | Full Stack Developer PHP, Laravel & Vue",
+    "DESCRIPTION": "Derwin Vacca's portfolio - Full Stack Developer specializing in PHP, Laravel, Vue.js and Angular. CCNA, AWS, Linux."
+  },
   "HEADER": {
     "HOME": "Home",
     "ABOUT": "About",
@@ -8,13 +16,16 @@
     "CONTACT": "Contact",
     "MENU": "Navigation menu",
     "CHANGE_TO_ES": "Change language to Spanish",
-    "CHANGE_TO_EN": "Change language to English"
+    "CHANGE_TO_EN": "Change language to English",
+    "TO_LIGHT": "Switch to light mode",
+    "TO_DARK": "Switch to dark mode"
   },
   "HERO": {
     "GREETING": "Hello, I'm",
     "TITLE": "Systems Engineer | Backend Developer",
     "SUBTITLE": "Networks, Cloud & Code",
-    "CTA": "View projects"
+    "CTA": "View projects",
+    "SCROLL": "Scroll"
   },
   "ABOUT": {
     "TITLE": "About Me",
@@ -52,6 +63,8 @@
   },
   "CERTIFICATIONS": {
     "TITLE": "Certifications",
+    "VIEW": "View certificate",
+    "DOWNLOAD": "Download certificate",
     "ITEMS": [
       {
         "name": "AWS Cloud Practitioner",
@@ -108,7 +121,9 @@
     "TITLE": "Projects",
     "VIEW_PROJECT": "View project",
     "VIEW_CODE": "View code",
-    "LOADING": "Loading projects..."
+    "LOADING": "Loading projects...",
+    "NO_DESCRIPTION": "No description",
+    "NO_PROJECTS": "No projects to show."
   },
   "CONTACT": {
     "TITLE": "Contact",

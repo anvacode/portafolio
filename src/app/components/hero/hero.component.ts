@@ -34,7 +34,7 @@ import { TranslateModule } from '@ngx-translate/core';
         <div class="mouse">
           <div class="wheel"></div>
         </div>
-        <span class="scroll-text">Scroll</span>
+        <span class="scroll-text">{{ 'HERO.SCROLL' | translate }}</span>
       </div>
     </section>
   `,

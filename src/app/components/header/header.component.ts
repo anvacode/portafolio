@@ -26,7 +26,7 @@ import { LanguageService } from '../../services/language.service';
           <button 
             class="control-btn" 
             (click)="toggleTheme()"
-            [attr.aria-label]="themeService.theme() === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'"
+            [attr.aria-label]="themeService.theme() === 'dark' ? ('HEADER.TO_LIGHT' | translate) : ('HEADER.TO_DARK' | translate)"
           >
             <span class="icon">{{ themeService.theme() === 'dark' ? '☀️' : '🌙' }}</span>
           </button>

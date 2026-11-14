@@ -25,7 +25,7 @@ import { ScrollAnimationDirective } from '../../directives/scroll-animation.dire
             </div>
             
             <p class="project-description">
-              {{ project.description || 'Sin descripción' }}
+              {{ project.description || ('PROJECTS.NO_DESCRIPTION' | translate) }}
             </p>
 
             <div class="project-topics" *ngIf="project.topics?.length">
@@ -57,7 +57,7 @@ import { ScrollAnimationDirective } from '../../directives/scroll-animation.dire
         </div>
 
         <div class="empty-state" *ngIf="!isLoading && projects.length === 0">
-          <p>No hay proyectos para mostrar.</p>
+          <p>{{ 'PROJECTS.NO_PROJECTS' | translate }}</p>
         </div>
       </div>
     </section>
