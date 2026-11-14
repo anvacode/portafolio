@@ -4,6 +4,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { GithubService } from '../../services/github.service';
 import { Project } from '../../models/project.model';
 import { ScrollAnimationDirective } from '../../directives/scroll-animation.directive';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-projects',
@@ -19,20 +20,7 @@ export class ProjectsComponent implements OnInit {
   constructor(private githubService: GithubService) {}
 
   ngOnInit(): void {
-    // Configura tu nombre de usuario de GitHub
-    this.githubService.setUsername('anvacode');
-    
-    // Lista de repositorios específicos que quieres mostrar
-    const reposToShow = [
-      'english-ai-learning-app',
-      'agrigest',
-      'biblioteca',
-      'warehouse',
-      'autotronicars_soa_2',
-      'portafolio'
-    ];
-
-    this.githubService.getSpecificRepositories(reposToShow).subscribe({
+    this.githubService.getSpecificRepositories(environment.github.reposToShow).subscribe({
       next: (projects) => {
         this.projects = projects;
         this.isLoading = false;
