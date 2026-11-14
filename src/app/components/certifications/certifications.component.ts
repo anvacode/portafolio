@@ -30,7 +30,7 @@ interface Certification {
             <h3 class="cert-name">{{ cert.name }}</h3>
             <p class="cert-issuer">{{ cert.issuer }}</p>
             <p class="cert-date" *ngIf="cert.date">{{ cert.date }}</p>
-            <span class="view-badge">Ver certificado</span>
+            <span class="view-badge">{{ 'CERTIFICATIONS.VIEW' | translate }}</span>
           </div>
         </div>
       </div>
@@ -41,14 +41,14 @@ interface Certification {
         <div class="modal-header">
           <h3 class="modal-title">{{ selectedCert?.name }}</h3>
           <div class="modal-actions">
-            <a [href]="selectedCert?.pdf" download class="download-btn" aria-label="Descargar certificado">
+            <a [href]="selectedCert?.pdf" download class="download-btn" [attr.aria-label]="'CERTIFICATIONS.DOWNLOAD' | translate">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                 <polyline points="7 10 12 15 17 10"></polyline>
                 <line x1="12" y1="15" x2="12" y2="3"></line>
               </svg>
             </a>
-            <button class="close-btn" (click)="closeCert()" aria-label="Cerrar">
+            <button class="close-btn" (click)="closeCert()" [attr.aria-label]="'COMMON.CLOSE' | translate">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="18" y1="6" x2="6" y2="18"></line>
                 <line x1="6" y1="6" x2="18" y2="18"></line>
