@@ -1,0 +1,22 @@
+<section id="experiencia" class="experience">
+  <div class="container">
+    <h2 class="section-title scroll-animate">{{ 'EXPERIENCE.TITLE' | translate }}</h2>
+    
+    <div class="experience-grid">
+      <div class="experience-card scroll-animate" *ngFor="let exp of experiences; let i = index" [style.transition-delay]="i * 0.15 + 's'">
+        <div class="card-header">
+          <div class="card-info">
+            <h3 class="role">{{ exp.role }}</h3>
+            <p class="company">{{ exp.company }}</p>
+            <p class="location">{{ exp.location }}</p>
+          </div>
+          <span class="period">{{ exp.period }}</span>
+        </div>
+        <div class="divider"></div>
+        <ul class="description">
+          <li *ngFor="let desc of exp.description">{{ desc }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

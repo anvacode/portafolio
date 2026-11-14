@@ -1,0 +1,46 @@
+<header class="header" [class.scrolled]="isScrolled">
+  <nav class="nav">
+    <a href="#inicio" class="logo">anvacode</a>
+    
+    <div #navLinks id="nav-links" class="nav-links" [class.active]="isMenuOpen" (keydown)="onMenuKeydown($event)">
+      <a href="#inicio" (click)="closeMenu()" [class.active]="activeSection === 'inicio'">{{ 'HEADER.HOME' | translate }}</a>
+      <a href="#sobre-mi" (click)="closeMenu()" [class.active]="activeSection === 'sobre-mi'">{{ 'HEADER.ABOUT' | translate }}</a>
+      <a href="#experiencia" (click)="closeMenu()" [class.active]="activeSection === 'experiencia'">{{ 'HEADER.EXPERIENCE' | translate }}</a>
+      <a href="#certificaciones" (click)="closeMenu()" [class.active]="activeSection === 'certificaciones'">{{ 'HEADER.CERTIFICATIONS' | translate }}</a>
+      <a href="#proyectos" (click)="closeMenu()" [class.active]="activeSection === 'proyectos'">{{ 'HEADER.PROJECTS' | translate }}</a>
+      <a href="#contacto" (click)="closeMenu()" [class.active]="activeSection === 'contacto'">{{ 'HEADER.CONTACT' | translate }}</a>
+    </div>
+
+    <div class="controls">
+      <button 
+        class="control-btn" 
+        (click)="toggleTheme()"
+        [attr.aria-label]="themeService.theme() === 'dark' ? ('HEADER.TO_LIGHT' | translate) : ('HEADER.TO_DARK' | translate)"
+      >
+        <span class="icon">{{ themeService.theme() === 'dark' ? '☀️' : '🌙' }}</span>
+      </button>
+      
+      <button 
+        class="control-btn language-btn" 
+        (click)="toggleLanguage()"
+        [attr.aria-label]="languageService.currentLang() === 'es' ? ('HEADER.CHANGE_TO_EN' | translate) : ('HEADER.CHANGE_TO_ES' | translate)"
+      >
+        {{ languageService.currentLang() === 'es' ? 'EN' : 'ES' }}
+      </button>
+
+      <button 
+        #menuToggle
+        class="menu-toggle" 
+        (click)="toggleMenu()"
+        [class.active]="isMenuOpen"
+        aria-controls="nav-links"
+        [attr.aria-expanded]="isMenuOpen"
+        [attr.aria-label]="('HEADER.MENU' | translate)"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
