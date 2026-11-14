@@ -1,5 +1,16 @@
 export const environment = {
   production: true,
+  github: {
+    username: 'anvacode',
+    reposToShow: [
+      'english-ai-learning-app',
+      'agrigest',
+      'biblioteca',
+      'warehouse',
+      'autotronicars_soa_2',
+      'portafolio'
+    ]
+  },
   emailjs: {
     serviceId: 'service_kv4c1ga',
     templateId: 'template_l9y8qdt',
