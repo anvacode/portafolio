@@ -57,7 +57,7 @@ interface Certification {
           </div>
         </div>
         <div class="modal-body">
-          <iframe *ngIf="selectedCert" [src]="'assets/' + selectedCert.pdf | safeUrl" class="pdf-viewer"></iframe>
+          <iframe *ngIf="selectedCert" [src]="'assets/' + selectedCert.pdf | safeUrl" [attr.title]="selectedCert.name" class="pdf-viewer"></iframe>
         </div>
       </div>
     </div>
