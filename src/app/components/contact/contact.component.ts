@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 import { ScrollAnimationDirective } from '../../directives/scroll-animation.directive';
 import { environment } from '../../../environments/environment';
 
@@ -442,6 +442,7 @@ export class ContactComponent {
   private readonly serviceId = environment.emailjs.serviceId;
   private readonly templateId = environment.emailjs.templateId;
   private readonly publicKey = environment.emailjs.publicKey;
+  private readonly recipientName = environment.emailjs.recipientName;
 
   onSubmit(): void {
     if (this.isSubmitting) return;
@@ -451,14 +452,14 @@ export class ContactComponent {
     this.showError = false;
 
     const templateParams = {
-      to_name: 'Derwin',
+      to_name: this.recipientName,
       from_name: this.formData.name,
       from_email: this.formData.email,
       message: this.formData.message,
       reply_to: this.formData.email
     };
 
-    emailjs.send(this.serviceId, this.templateId, templateParams, this.publicKey)
+    emailjs.send(this.serviceId, this.templateId, templateParams, { publicKey: this.publicKey })
       .then(() => {
         this.showSuccess = true;
         this.formData = { name: '', email: '', message: '' };
