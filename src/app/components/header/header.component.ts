@@ -1,4 +1,4 @@
-import { Component, HostListener, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, HostListener, AfterViewInit, OnDestroy, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { ThemeService } from '../../services/theme.service';
@@ -13,7 +13,7 @@ import { LanguageService } from '../../services/language.service';
       <nav class="nav">
         <a href="#inicio" class="logo">anvacode</a>
         
-        <div class="nav-links" [class.active]="isMenuOpen">
+        <div #navLinks id="nav-links" class="nav-links" [class.active]="isMenuOpen" (keydown)="onMenuKeydown($event)">
           <a href="#inicio" (click)="closeMenu()" [class.active]="activeSection === 'inicio'">{{ 'HEADER.HOME' | translate }}</a>
           <a href="#sobre-mi" (click)="closeMenu()" [class.active]="activeSection === 'sobre-mi'">{{ 'HEADER.ABOUT' | translate }}</a>
           <a href="#experiencia" (click)="closeMenu()" [class.active]="activeSection === 'experiencia'">{{ 'HEADER.EXPERIENCE' | translate }}</a>
@@ -34,14 +34,19 @@ import { LanguageService } from '../../services/language.service';
           <button 
             class="control-btn language-btn" 
             (click)="toggleLanguage()"
+            [attr.aria-label]="languageService.currentLang() === 'es' ? ('HEADER.CHANGE_TO_EN' | translate) : ('HEADER.CHANGE_TO_ES' | translate)"
           >
             {{ languageService.currentLang() === 'es' ? 'EN' : 'ES' }}
           </button>
 
           <button 
+            #menuToggle
             class="menu-toggle" 
             (click)="toggleMenu()"
             [class.active]="isMenuOpen"
+            aria-controls="nav-links"
+            [attr.aria-expanded]="isMenuOpen"
+            [attr.aria-label]="('HEADER.MENU' | translate)"
           >
             <span></span>
             <span></span>
@@ -219,6 +224,9 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
   isMenuOpen = false;
   activeSection = 'inicio';
 
+  @ViewChild('navLinks') private navLinks?: ElementRef<HTMLElement>;
+  @ViewChild('menuToggle') private menuToggle?: ElementRef<HTMLElement>;
+
   private observer: IntersectionObserver | null = null;
 
   constructor(
@@ -263,6 +271,36 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
     this.isScrolled = window.scrollY > 50;
   }
 
+  @HostListener('document:keydown.escape')
+  onEscape(): void {
+    if (this.isMenuOpen) {
+      this.closeMenuWithFocus();
+    }
+  }
+
+  onMenuKeydown(event: KeyboardEvent): void {
+    if (!this.isMenuOpen) return;
+
+    if (event.key === 'Tab') {
+      const links = Array.from(
+        this.navLinks?.nativeElement.querySelectorAll<HTMLAnchorElement>('a') ?? []
+      );
+      if (links.length === 0) return;
+
+      const first = links[0];
+      const last = links[links.length - 1];
+      const active = document.activeElement;
+
+      if (event.shiftKey && active === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && active === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
+  }
+
   toggleTheme(): void {
     this.themeService.toggleTheme();
   }
@@ -273,9 +311,19 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
 
   toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen;
+    if (this.isMenuOpen) {
+      setTimeout(() => {
+        this.navLinks?.nativeElement.querySelector('a')?.focus();
+      });
+    }
   }
 
   closeMenu(): void {
     this.isMenuOpen = false;
+  }
+
+  private closeMenuWithFocus(): void {
+    this.isMenuOpen = false;
+    setTimeout(() => this.menuToggle?.nativeElement.focus());
   }
 }

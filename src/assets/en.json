@@ -5,7 +5,10 @@
     "EXPERIENCE": "Experience",
     "CERTIFICATIONS": "Certifications",
     "PROJECTS": "Projects",
-    "CONTACT": "Contact"
+    "CONTACT": "Contact",
+    "MENU": "Navigation menu",
+    "CHANGE_TO_ES": "Change language to Spanish",
+    "CHANGE_TO_EN": "Change language to English"
   },
   "HERO": {
     "GREETING": "Hello, I'm",
