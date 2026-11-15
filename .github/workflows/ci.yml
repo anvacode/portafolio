@@ -25,6 +25,6 @@ jobs:
         run: npm run build
 
       - name: Run tests (headless)
-        run: ng test --watch=false --browsers=ChromeHeadless
+        run: npx ng test --watch=false --browsers=ChromeHeadless
         env:
           CHROME_BIN: /usr/bin/google-chrome
