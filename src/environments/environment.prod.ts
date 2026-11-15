@@ -3,7 +3,7 @@ export const environment = {
   github: {
     username: 'anvacode',
     reposToShow: [
-      'english-ai-learning-app',
+      'english-learning-app',
       'agrigest',
       'biblioteca',
       'warehouse',
