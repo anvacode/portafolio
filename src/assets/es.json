@@ -39,7 +39,7 @@
         "company": "Arsenal Tire Performance Tech",
         "role": "Software Developer",
         "location": "Monterrey, México (Remoto)",
-        "period": "Enero 2026 – Presente",
+        "period": "Marzo 2026 – Presente",
         "description": [
           "Desarrollé una aplicación móvil en Flutter/Dart para monitoreo en tiempo real de sensores IoT incrustados en neumáticos de vehículos, apoyando el seguimiento de rendimiento y condición para operaciones del sector minero",
           "Lideré el desarrollo end-to-end (frontend y backend) de una aplicación de audio-streaming/audiolibros en React Native, incluyendo reproducción de audio, descargas offline y gestión de biblioteca de usuario",
@@ -114,6 +114,20 @@
         "date": "Nov 2024",
         "icon": "🏆",
         "pdf": "certifications/steel-night-fury.pdf"
+      },
+      {
+        "name": "Visualización de datos usando Power BI",
+        "issuer": "SENA",
+        "date": "Oct 2026",
+        "icon": "📊",
+        "pdf": "certifications/power-bi-data-visualization.pdf"
+      },
+      {
+        "name": "Manejo intermedio de la herramienta de hojas de cálculo Excel",
+        "issuer": "SENA",
+        "date": "Oct 2026",
+        "icon": "📈",
+        "pdf": "certifications/intermediate-excel.pdf"
       }
     ]
   },

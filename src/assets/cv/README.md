@@ -1,14 +1,17 @@
 # Curriculum Vitae
 
-Coloca aquí tu archivo CV en formato PDF.
+Aquí se encuentran los archivos CV en formato PDF.
 
-**Nombre del archivo:** `cv-derwin-vacca.pdf`
+**Nombres de archivo:**
 
-**Nota:** Asegúrate de que el archivo se llame exactamente así para que el botón de descarga funcione correctamente.
+- `cv-derwin-vacca-es.pdf` — versión en español
+- `cv-derwin-vacca-en.pdf` — versión en inglés
 
-## Cómo agregar tu CV:
+El botón "CV" del portafolio descarga automáticamente la versión correspondiente al idioma activo de la página.
 
-1. Exporta tu CV como PDF
-2. Nombralo: `cv-derwin-vacca.pdf`
-3. Colócalo en esta carpeta (`src/assets/cv/`)
-4. El botón "Descargar CV" en tu portafolio funcionará automáticamente
+## Cómo actualizar tu CV:
+
+1. Exporta tu CV como PDF en español e inglés
+2. Nombra los archivos exactamente `cv-derwin-vacca-es.pdf` y `cv-derwin-vacca-en.pdf`
+3. Colócalos en esta carpeta (`src/assets/cv/`) reemplazando los existentes
+4. El botón de descarga funcionará automáticamente
